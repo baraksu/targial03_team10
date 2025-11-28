@@ -25,7 +25,7 @@ public class Encryption
         int sentenceLengthBfr = sentence.length();
         sentence = sentence.replace(" ", "");
         int sentenceLengthAftr = sentence.length();
-        int senLength = Math.abs(sentenceLengthAftr-sentenceLengthBfr);
+        int senLength = sentenceLengthBfr-sentenceLengthAftr;
         return senLength+1;
     }
     public static String moveWordsEnc(String sentence, int senLength){
