@@ -21,7 +21,7 @@ public class Encryption
         return a+b;
     }
     public static int senLength (String sentence){
-        sentence = sentence.replace("\\s+", " ");
+        sentence = sentence.replaceAll("\\s+", " ");
         int sentenceLengthBfr = sentence.length();
         sentence = sentence.replace(" ", "");
         int sentenceLengthAftr = sentence.length();
