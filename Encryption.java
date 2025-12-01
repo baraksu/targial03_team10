@@ -8,6 +8,8 @@ public class Encryption
         input.nextLine();
         System.out.println("Enter up to a 3 word sentence");
         String sentence = input.nextLine();
+        sentence = sentence.replaceAll("\\s+", " ");
+        sentence = sentence.trim();
         int senLength = senLength(sentence);
         if (pick == 1){
           System.out.println(sentence = moveWordsEnc(sentence, senLength));
@@ -20,8 +22,7 @@ public class Encryption
     public static int add (int a, int b){
         return a+b;
     }
-    public static int senLength (String sentence){
-        sentence = sentence.replaceAll("\\s+", " ");
+    public static int senLength (String sentence){       
         int sentenceLengthBfr = sentence.length();
         sentence = sentence.replace(" ", "");
         int sentenceLengthAftr = sentence.length();
