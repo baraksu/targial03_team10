@@ -80,4 +80,104 @@ public class EncryptionTester
         String result = Encryption.MoveWordsDec("is my name",3);
         assertEquals("my name is",result);
     }
+    @Test
+    public void MoveLettersEnc1(){
+        String result = Encryption.MoveLettersEnc("is",1);
+        assertEquals("si",result);
+    }
+    @Test
+    public void MoveLettersEnc2(){
+        String result = Encryption.MoveLettersEnc("my",1);
+        assertEquals("ym",result);
+    }
+    @Test
+    public void MoveLettersEnc3(){
+        String result = Encryption.MoveLettersEnc("hey everybody",2);
+        assertEquals("dyhey everybo",result);
+    }
+    @Test
+    public void MoveLettersEnc4(){
+        String result = Encryption.MoveLettersEnc("very good",2);
+        assertEquals("odvery go",result);
+    }
+    @Test
+    public void MoveLettersEnc5(){
+        String result = Encryption.MoveLettersEnc("my name is",3);
+        assertEquals(" ismy name",result);
+    }
+    @Test
+    public void MoveLettersDec1(){
+        String result = Encryption.MoveLettersDec("why",1);
+        assertEquals("hyw",result);
+    }
+    @Test
+    public void MoveLettersDec2(){
+        String result = Encryption.MoveLettersDec("are",1);
+        assertEquals("rea",result);
+    }
+    @Test
+    public void MoveLettersDec3(){
+        String result = Encryption.MoveLettersDec("is my name",2);
+        assertEquals(" my nameis",result);
+    }
+    @Test
+    public void MoveLettersDec4(){
+        String result = Encryption.MoveLettersDec("are you ready",3);
+        assertEquals(" you readyare",result);
+    }
+    @Test
+    public void MoveLettersDec5(){
+        String result = Encryption.MoveLettersDec("what is this",3);
+        assertEquals("t is thiswha",result);
+    }
+    @Test
+    public void ReplaceEnc1(){
+        String result = Encryption.ReplaceEnc("is");
+        assertEquals("1s",result);
+    }
+    @Test
+    public void ReplaceEnc2(){
+        String result = Encryption.ReplaceEnc("are");
+        assertEquals("@r#",result);
+    }
+    @Test
+    public void ReplaceEnc3(){
+        String result = Encryption.ReplaceEnc("why is");
+        assertEquals("why 1s",result);
+    }
+    @Test
+    public void ReplaceEnc4(){
+        String result = Encryption.ReplaceEnc("am i ready");
+        assertEquals("@m 1 r#@dy",result);
+    }
+    @Test
+    public void ReplaceEnc5(){
+        String result = Encryption.ReplaceEnc("chocolate");
+        assertEquals("ch0c0l@t#",result);
+    }
+    @Test
+    public void ReplaceDec1(){
+        String result = Encryption.ReplaceDec("@r#");
+        assertEquals("are",result);
+    }
+    @Test
+    public void ReplaceDec2(){
+        String result = Encryption.ReplaceDec("why");
+        assertEquals("why",result);
+    }
+    @Test
+    public void ReplaceDec3(){
+        String result = Encryption.ReplaceDec("1 @m");
+        assertEquals("i am",result);
+    }
+    @Test
+    public void ReplaceDec4(){
+        String result = Encryption.ReplaceDec("th# d#st1n@t10n");
+        assertEquals("the destination",result);
+    }
+    @Test
+    public void ReplaceDec5(){
+        String result = Encryption.ReplaceDec("h#y");
+        assertEquals("hey",result);
+    }
 }
