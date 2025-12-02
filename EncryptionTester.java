@@ -2,12 +2,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class EncryptionTest {
-
+    
     @Test
-    void testSenLengthOneWord() {
-        String input = "Hello"; 
-        int expected = 1;
-        int actual = Encryption.SenLength(input);
-        assertEquals(expected, actual);
+    public void testAdd(){
+        int result = Encryption.SenLength("my");
+        assertEquals(1,result); 
     }
+    
 }
