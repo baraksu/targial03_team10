@@ -11,6 +11,8 @@ import org.junit.Test;
 public class EncryptionTester
 {
     @Test
-    
+    public voidTestAdd(){
+        String result = Encryption.SenLength("my")
+        assertEquals(1)
     
 }
