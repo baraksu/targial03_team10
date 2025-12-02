@@ -6,6 +6,11 @@ public class Encryption
         System.out.println("Welcome to the Encryption / Decryption Program\nEnter 1 for Encrypt | 2 for Decrypt");
         int pick = input.nextInt();
         input.nextLine();
+        if(pick > 2 || pick < 1){
+            System.out.println(pick + " is not a valid choice");
+            return;
+        }
+            
         System.out.println("Enter up to a 3 word sentence");
         String sentence = input.nextLine();
         sentence = sentence.replaceAll("\\s+", " ");
@@ -22,9 +27,7 @@ public class Encryption
           sentence = MoveLettersDec(sentence, senLength);
           sentence = MoveWordsDec(sentence, senLength);
           System.out.println("The decrypted sentence is: " + sentence);
-        }
-        else
-            System.out.println(pick+" is not a valid choice");    
+        }   
     }
     public static int SenLength (String sentence){     // אייזנמן  
         int sentenceLengthBfr = sentence.length();
