@@ -17,10 +17,12 @@ public class Encryption
           sentence = replaceEnc(sentence);
           System.out.println("The encrypted sentence: " + sentence);
         }
-        else if(pick == 2)
+        else if(pick == 2){
+          sentence = replaceDec(sentence);
+          sentence = moveLettersDec(sentence, senLength);
           sentence = moveWordsDec(sentence, senLength);
-          // Move Vowels
-          // Change Vowels
+          System.out.println("The decrypted sentence is: " + sentence);
+        }
         else
             System.out.println(pick+" is not a valid choice");    
     }
@@ -80,12 +82,37 @@ public class Encryption
             return lastChars + everythingButLastChars;
         }
     }
+    public static String moveLettersDec(String sentence, int senLength){
+        if (senLength == 1){
+            char firstChar = sentence.charAt(0);
+            String everythingButFirstChar = sentence.substring(1);
+            return everythingButFirstChar + firstChar;
+        }
+        else if (senLength == 2){
+            String firstChars = sentence.substring(0, 2);
+            String everythingButFirstChars = sentence.substring(2);
+            return everythingButFirstChars + firstChars;
+        }
+        else{
+            String firstChars = sentence.substring(0, 3);
+            String everythingButFirstChars = sentence.substring(3);
+            return everythingButFirstChars + firstChars;
+        }
+    }
     public static String replaceEnc(String sentence){
         sentence = sentence.replace("a", "@");
         sentence = sentence.replace("e", "#");
         sentence = sentence.replace("i", "1");
         sentence = sentence.replace("o", "0");
         sentence = sentence.replace("u", "&");
+        return sentence;
+    }
+    public static String replaceDec(String sentence){
+        sentence = sentence.replace('&', 'u');
+        sentence = sentence.replace('0', 'o');
+        sentence = sentence.replace('1', 'i');
+        sentence = sentence.replace('#', 'e');
+        sentence = sentence.replace('@', 'a');
         return sentence;
     }
 }
