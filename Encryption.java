@@ -1,4 +1,3 @@
-
 import java.util.*;
 public class Encryption
 {
@@ -13,15 +12,15 @@ public class Encryption
         sentence = sentence.trim();
         int senLength = SenLength(sentence);
         if (pick == 1){
-          sentence = moveWordsEnc(sentence, senLength);
-          sentence = moveLettersEnc(sentence, senLength);
-          sentence = replaceEnc(sentence);
+          sentence = MoveWordsEnc(sentence, senLength);
+          sentence = MoveLettersEnc(sentence, senLength);
+          sentence = ReplaceEnc(sentence);
           System.out.println("The encrypted sentence: " + sentence);
         }
         else if(pick == 2){
-          sentence = replaceDec(sentence);
-          sentence = moveLettersDec(sentence, senLength);
-          sentence = moveWordsDec(sentence, senLength);
+          sentence = ReplaceDec(sentence);
+          sentence = MoveLettersDec(sentence, senLength);
+          sentence = MoveWordsDec(sentence, senLength);
           System.out.println("The decrypted sentence is: " + sentence);
         }
         else
@@ -34,7 +33,7 @@ public class Encryption
         int senLength = sentenceLengthBfr-sentenceLengthAftr;
         return senLength+1;
     }
-    public static String moveWordsEnc(String sentence, int senLength){ // אייזנמן
+    public static String MoveWordsEnc(String sentence, int senLength){ // אייזנמן
         if (senLength == 1)
             return sentence;
         else if (senLength == 2){
@@ -49,7 +48,7 @@ public class Encryption
             return thirdWord + " " + besideThirdWord;
         }
     }
-    public static String moveWordsDec(String sentence, int senLength){ // עיני
+    public static String MoveWordsDec(String sentence, int senLength){ // עיני
         if (senLength == 1)
             return sentence;
         else if (senLength == 2){
@@ -63,7 +62,7 @@ public class Encryption
         return besideFirstWord + " " + firstWord;
         }
     }
-    public static String moveLettersEnc(String sentence, int senLength){ // אייזנמן
+    public static String MoveLettersEnc(String sentence, int senLength){ // אייזנמן
         if (senLength == 1){
             char lastChar = sentence.charAt(sentence.length() -1);
             String everythingButLastChar = sentence.substring(0, sentence.length() -1);
@@ -80,7 +79,7 @@ public class Encryption
             return lastChars + everythingButLastChars;
         }
     }
-    public static String moveLettersDec(String sentence, int senLength){ // רוני
+    public static String MoveLettersDec(String sentence, int senLength){ // רוני
         if (senLength == 1){
             char firstChar = sentence.charAt(0);
             String everythingButFirstChar = sentence.substring(1);
@@ -97,7 +96,7 @@ public class Encryption
             return everythingButFirstChars + firstChars;
         }
     }
-    public static String replaceEnc(String sentence){ // עיני
+    public static String ReplaceEnc(String sentence){ // עיני
         sentence = sentence.replace("a", "@");
         sentence = sentence.replace("e", "#");
         sentence = sentence.replace("i", "1");
@@ -105,7 +104,7 @@ public class Encryption
         sentence = sentence.replace("u", "&");
         return sentence;
     }
-    public static String replaceDec(String sentence){ // רוני
+    public static String ReplaceDec(String sentence){ // רוני
         sentence = sentence.replace('&', 'u');
         sentence = sentence.replace('0', 'o');
         sentence = sentence.replace('1', 'i');
