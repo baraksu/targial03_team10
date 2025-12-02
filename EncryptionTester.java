@@ -45,7 +45,8 @@ public class EncryptionTester
     public void MoveWordsEnc3(){
         String result = Encryption.MoveWordsEnc("my name",2);
         assertEquals("name my",result);
-    }@Test
+    }
+    @Test
     public void MoveWordsEnc4(){
         String result = Encryption.MoveWordsEnc("give your",2);
         assertEquals("your give",result);
