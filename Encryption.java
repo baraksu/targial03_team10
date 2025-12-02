@@ -10,7 +10,7 @@ public class Encryption
         String sentence = input.nextLine();
         sentence = sentence.replaceAll("\\s+", " ");
         sentence = sentence.trim();
-        int senLength = senLength(sentence);
+        int senLength = SenLength(sentence);
         if (pick == 1){
           sentence = moveWordsEnc(sentence, senLength);
           sentence = moveLettersEnc(sentence, senLength);
