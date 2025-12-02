@@ -13,9 +13,13 @@ public class Encryption
         int senLength = senLength(sentence);
         if (pick == 1){
           System.out.println(sentence = moveWordsEnc(sentence, senLength));
+          // Move letters
+          // Change Vowels
         }
-        //else if(pick == 2)
-        //  run decryption
+        else if(pick == 2)
+          System.out.println(sentence = moveWordsDec(sentence, senLength));
+          // Move Vowels
+          // Change Vowels
         //else
             //System.out.println(pick+" is not a valid choice");    
     }
@@ -44,4 +48,19 @@ public class Encryption
             return thirdWord + " " + besideThirdWord;
         }
     }
+    public static String moveWordsDec(String sentence, int senLength){
+        if (senLength == 1)
+            return sentence;
+        else if (senLength == 2){
+            String firstWord = sentence.substring(0, sentence.indexOf(" "));
+            String lastWord = sentence.substring(sentence.indexOf(" ") + 1);
+            return lastWord + " " + firstWord;
+        }
+        else{    
+        String firstWord = sentence.substring(0, sentence.indexOf(" ")); 
+        String besideFirstWord = sentence.substring(sentence.indexOf(" ")+1);
+        return besideFirstWord + " " + firstWord;
+        }
+    }
+   
 }
