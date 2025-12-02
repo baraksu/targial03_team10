@@ -33,7 +33,7 @@ public class Encryption
         int senLength = sentenceLengthBfr-sentenceLengthAftr;
         return senLength+1;
     }
-    public static String moveWordsEnc(String sentence, int senLength){ \\אייזנמן
+    public static String moveWordsEnc(String sentence, int senLength){ \\ אייזנמן
         if (senLength == 1)
             return sentence;
         else if (senLength == 2){
@@ -48,7 +48,7 @@ public class Encryption
             return thirdWord + " " + besideThirdWord;
         }
     }
-    public static String moveWordsDec(String sentence, int senLength){ \\עיני
+    public static String moveWordsDec(String sentence, int senLength){ \\ עיני
         if (senLength == 1)
             return sentence;
         else if (senLength == 2){
@@ -79,7 +79,7 @@ public class Encryption
             return lastChars + everythingButLastChars;
         }
     }
-    public static String moveLettersDec(String sentence, int senLength){ \\רוני
+    public static String moveLettersDec(String sentence, int senLength){ \\ רוני
         if (senLength == 1){
             char firstChar = sentence.charAt(0);
             String everythingButFirstChar = sentence.substring(1);
@@ -96,7 +96,7 @@ public class Encryption
             return everythingButFirstChars + firstChars;
         }
     }
-    public static String replaceEnc(String sentence){ \\עיני
+    public static String replaceEnc(String sentence){ \\ עיני
         sentence = sentence.replace("a", "@");
         sentence = sentence.replace("e", "#");
         sentence = sentence.replace("i", "1");
@@ -104,7 +104,7 @@ public class Encryption
         sentence = sentence.replace("u", "&");
         return sentence;
     }
-    public static String replaceDec(String sentence){ \\רוני
+    public static String replaceDec(String sentence){ \\ רוני
         sentence = sentence.replace('&', 'u');
         sentence = sentence.replace('0', 'o');
         sentence = sentence.replace('1', 'i');
