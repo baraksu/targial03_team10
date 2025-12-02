@@ -12,12 +12,12 @@ public class Encryption
         sentence = sentence.trim();
         int senLength = senLength(sentence);
         if (pick == 1){
-          System.out.println(sentence = moveWordsEnc(sentence, senLength));
+          sentence = moveWordsEnc(sentence, senLength);
           // Move letters
-          // Change Vowels
+          System.out.println(sentence = replaceEnc(sentence));
         }
         else if(pick == 2)
-          System.out.println(sentence = moveWordsDec(sentence, senLength));
+          sentence = moveWordsDec(sentence, senLength);
           // Move Vowels
           // Change Vowels
         //else
@@ -62,5 +62,13 @@ public class Encryption
         return besideFirstWord + " " + firstWord;
         }
     }
-   
+    public static String replaceEnc(String sentence){
+        sentence = sentence.replace("a", "@");
+        sentence = sentence.replace("e", "#");
+        sentence = sentence.replace("i", "1");
+        sentence = sentence.replace("o", "0");
+        sentence = sentence.replace("u", "&");
+        return sentence;
+    }
 }
+
