@@ -26,9 +26,6 @@ public class Encryption
         else
             System.out.println(pick+" is not a valid choice");    
     }
-    public static int add (int a, int b){
-        return a+b;
-    }
     public static int senLength (String sentence){       
         int sentenceLengthBfr = sentence.length();
         sentence = sentence.replace(" ", "");
