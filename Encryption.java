@@ -13,15 +13,16 @@ public class Encryption
         int senLength = senLength(sentence);
         if (pick == 1){
           sentence = moveWordsEnc(sentence, senLength);
-          // Move letters
-          System.out.println(sentence = replaceEnc(sentence));
+          sentence = moveLettersEnc(sentence, senLength);
+          sentence = replaceEnc(sentence);
+          System.out.println("The encrypted sentence: " + sentence);
         }
         else if(pick == 2)
           sentence = moveWordsDec(sentence, senLength);
           // Move Vowels
           // Change Vowels
-        //else
-            //System.out.println(pick+" is not a valid choice");    
+        else
+            System.out.println(pick+" is not a valid choice");    
     }
     public static int add (int a, int b){
         return a+b;
@@ -62,6 +63,23 @@ public class Encryption
         return besideFirstWord + " " + firstWord;
         }
     }
+    public static String moveLettersEnc(String sentence, int senLength){
+        if (senLength == 1){
+            char lastChar = sentence.charAt(sentence.length() -1);
+            String everythingButLastChar = sentence.substring(0, sentence.length() -1);
+            return lastChar + everythingButLastChar;
+        }
+        else if (senLength == 2){
+            String lastChars = sentence.substring(sentence.length() - 2);
+            String everythingButLastChars = sentence.substring(0, sentence.length() -2);
+            return lastChars + everythingButLastChars;
+        }
+        else{
+            String lastChars = sentence.substring(sentence.length() -3);
+            String everythingButLastChars = sentence.substring(0, sentence.length() -3);
+            return lastChars + everythingButLastChars;
+        }
+    }
     public static String replaceEnc(String sentence){
         sentence = sentence.replace("a", "@");
         sentence = sentence.replace("e", "#");
@@ -71,4 +89,3 @@ public class Encryption
         return sentence;
     }
 }
-
