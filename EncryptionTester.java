@@ -1,18 +1,14 @@
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
+public class EncryptionTest {
 
-/**
- * Write a description of class EncryptionTester here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class EncryptionTester
-{
     @Test
-    public voidTestAdd(){
-        String result = Encryption.SenLength("my")
-        assertEquals(1)
-    
+    void testSenLengthOneWord() {
+        // The main method preprocesses the input string before calling SenLength
+        String input = "Hello"; 
+        int expected = 1;
+        int actual = Encryption.SenLength(input);
+        assertEquals(expected, actual, "Should return length of 1");
+    }
 }
