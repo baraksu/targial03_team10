@@ -26,7 +26,7 @@ public class Encryption
         else
             System.out.println(pick+" is not a valid choice");    
     }
-    public static int senLength (String sentence){     \\ אייזנמן  
+    public static int SenLength (String sentence){     \\ אייזנמן  
         int sentenceLengthBfr = sentence.length();
         sentence = sentence.replace(" ", "");
         int sentenceLengthAftr = sentence.length();
