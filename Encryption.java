@@ -16,6 +16,10 @@ public class Encryption
           sentence = sentence.replaceAll("\\s+", " ");
           sentence = sentence.trim();
           int senLength = SenLength(sentence);
+          if(senLength>3){
+              System.out.println("Error - You wrote more than 3 words!");
+              return;
+          }
           sentence = MoveWordsEnc(sentence, senLength);
           sentence = MoveLettersEnc(sentence, senLength);
           sentence = ReplaceEnc(sentence);
@@ -23,6 +27,10 @@ public class Encryption
         }
         else if(pick == 2){
           int senLength = SenLength(sentence);
+          if(senLength>3){
+              System.out.println("Error - You wrote more than 3 words!");
+              return;
+          }
           sentence = ReplaceDec(sentence);
           sentence = MoveLettersDec(sentence, senLength);
           sentence = MoveWordsDec(sentence, senLength);
