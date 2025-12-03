@@ -12,6 +12,9 @@ public class Encryption
         }   
         System.out.println("Enter up to a 3 word sentence");
         String sentence = input.nextLine();
+        if (sentence.isEmpty()){
+            System.out.println("Error - You did not input a sentence!");
+        }
         if (pick == 1){
           sentence = sentence.replaceAll("\\s+", " ");
           sentence = sentence.trim();
