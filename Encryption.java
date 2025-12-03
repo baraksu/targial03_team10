@@ -14,6 +14,7 @@ public class Encryption
         String sentence = input.nextLine();
         if (sentence.isEmpty()){
             System.out.println("Error - You did not input a sentence!");
+            return;
         }
         if (pick == 1){
           sentence = sentence.replaceAll("\\s+", " ");
