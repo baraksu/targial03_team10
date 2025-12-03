@@ -9,20 +9,20 @@ public class Encryption
         if(pick > 2 || pick < 1){
             System.out.println(pick + " is not a valid choice");
             return;
-        }
-            
+        }   
         System.out.println("Enter up to a 3 word sentence");
         String sentence = input.nextLine();
-        sentence = sentence.replaceAll("\\s+", " ");
-        sentence = sentence.trim();
-        int senLength = SenLength(sentence);
         if (pick == 1){
+          sentence = sentence.replaceAll("\\s+", " ");
+          sentence = sentence.trim();
+          int senLength = SenLength(sentence);
           sentence = MoveWordsEnc(sentence, senLength);
           sentence = MoveLettersEnc(sentence, senLength);
           sentence = ReplaceEnc(sentence);
           System.out.println("The encrypted sentence: " + sentence);
         }
         else if(pick == 2){
+          int senLength = SenLength(sentence);
           sentence = ReplaceDec(sentence);
           sentence = MoveLettersDec(sentence, senLength);
           sentence = MoveWordsDec(sentence, senLength);
