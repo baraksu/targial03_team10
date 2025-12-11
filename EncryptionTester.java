@@ -27,8 +27,8 @@ public class EncryptionTester
     }
     @Test
     public void SenLength5(){
-        int result = Encryption.SenLength("are you here");
-        assertEquals(3,result);
+        int result = Encryption.SenLength("what are you doing");
+        assertEquals(4,result);
     }
     
     @Test
